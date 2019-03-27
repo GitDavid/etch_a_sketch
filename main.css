@@ -1,0 +1,9 @@
+div#container {
+    display: grid;
+    grid-template-rows: repeat(var(--numBoxes), var(--pxBoxes));
+    grid-template-columns: repeat(var(--numBoxes), var(--pxBoxes));
+}
+
+div.grid-item {
+    border: solid 1px;
+}
