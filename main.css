@@ -1,3 +1,9 @@
+body {
+    margin: auto;
+    max-width: 960px;
+    text-align: center;
+}
+
 div#container {
     display: grid;
     grid-template-rows: repeat(var(--numBoxes), var(--pxBoxes));
