@@ -28,4 +28,13 @@ reset.addEventListener("click", () => {
     }
 });
 
+const clear = document.getElementById("clear");
+
+clear.addEventListener("click", clearGrid);
+
+function clearGrid() {
+    const gridItems = document.getElementsByClassName("grid-item");
+    Array.prototype.forEach.call(gridItems, (item) => {item.style.backgroundColor = 'white'});
+}
+
 createGrid(20);
