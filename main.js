@@ -7,11 +7,9 @@ function createGrid(gridSize) {
     for (let i = 0; i < gridSize**2; i++) {
         const div = document.createElement("div");
         div.classList.add("grid-item");
-        div.addEventListener("mouseover", () => {
-            div.style.backgroundColor = 'black';
-        });
         container.appendChild(div);
     }
+    setInkColor();
 }
 
 const reset = document.getElementById("reset");
@@ -29,12 +27,25 @@ reset.addEventListener("click", () => {
 });
 
 const clear = document.getElementById("clear");
+const gridItems = document.getElementsByClassName("grid-item");
 
 clear.addEventListener("click", clearGrid);
 
 function clearGrid() {
-    const gridItems = document.getElementsByClassName("grid-item");
     Array.prototype.forEach.call(gridItems, (item) => {item.style.backgroundColor = 'white'});
+}
+
+const colorPicker = document.getElementById("colorpicker");
+colorPicker.addEventListener("change", setInkColor);
+
+function setInkColor() {
+    const gridItems = document.getElementsByClassName("grid-item");
+    const color = colorPicker.value;
+    Array.prototype.forEach.call(gridItems, (item) => {
+        item.addEventListener("mouseover", () => {
+            item.style.backgroundColor = color;
+        });
+    });
 }
 
 createGrid(20);
