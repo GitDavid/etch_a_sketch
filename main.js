@@ -15,9 +15,11 @@ function createGrid(gridSize) {
 const reset = document.getElementById("reset");
 
 reset.addEventListener("click", () => {    
-    const size = window.prompt("How big would you like your sketchpad to be?");
+    const size = window.prompt("Size of etchpad? (1 to 100)");
     if (!size || !parseInt(size)) {
-        window.alert(size + " is not a valid number");
+        window.alert(size + " is not a valid number!");
+    } else if (parseInt(size) < 1 || parseInt(size) > 100) {
+        window.alert(size + " is not between 1 and 100!");
     } else {
         while (container.firstChild) {
             container.removeChild(container.firstChild);
