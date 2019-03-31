@@ -4,6 +4,14 @@ body {
     text-align: center;
 }
 
+div#buttonContainer {
+    padding: 10px 10px;
+}
+
+.btn {
+    vertical-align: middle;
+}
+
 div#container {
     display: grid;
     grid-template-rows: repeat(var(--numBoxes), var(--pxBoxes));

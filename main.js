@@ -50,4 +50,20 @@ function setInkColor() {
     });
 }
 
+const randColor = document.getElementById("randcolor");
+randColor.addEventListener("click", setRandomColor);
+
+function setRandomColor() {
+    const gridItems = document.getElementsByClassName("grid-item");
+    Array.prototype.forEach.call(gridItems, (item) => {
+        const r = Math.floor(Math.random() * 255);
+        const g = Math.floor(Math.random() * 255);
+        const b = Math.floor(Math.random() * 255);
+        const color = `rgb(${r}, ${g}, ${b})`
+        item.addEventListener("mouseover", () => {
+            item.style.backgroundColor = color;
+        });
+    });
+}
+
 createGrid(20);
