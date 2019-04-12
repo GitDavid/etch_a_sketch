@@ -56,11 +56,11 @@ randColor.addEventListener("click", setRandomColor);
 function setRandomColor() {
     const gridItems = document.getElementsByClassName("grid-item");
     Array.prototype.forEach.call(gridItems, (item) => {
-        const r = Math.floor(Math.random() * 255);
-        const g = Math.floor(Math.random() * 255);
-        const b = Math.floor(Math.random() * 255);
-        const color = `rgb(${r}, ${g}, ${b})`
         item.addEventListener("mouseover", () => {
+            const r = Math.floor(Math.random() * 255);
+            const g = Math.floor(Math.random() * 255);
+            const b = Math.floor(Math.random() * 255);
+            const color = `rgb(${r}, ${g}, ${b})`
             item.style.backgroundColor = color;
         });
     });
